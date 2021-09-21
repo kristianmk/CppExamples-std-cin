@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits> // std::numeric_limits
 
 
 int integerInput(const std::string& message)
@@ -20,8 +21,8 @@ int integerInput(const std::string& message)
         }
 
         std::cerr << "Invalid value entered, try again." << std::endl;
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cin.clear();   // Clear all cin error state flags.
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore an unlimited number of chars until newline or end of stream found.
     }
 }
 
